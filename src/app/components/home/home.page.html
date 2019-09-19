@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Cartelera
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-grid>
+      <ion-row>
+          <ion-col size="6" *ngFor="let pelicula of peliculas" class="pelicula">
+              <div>
+                  <img src="{{url+'api/get-image/'+pelicula.image}}" *ngIf = "pelicula.image"/>
+              </div>
+            <h4>{{pelicula.nombre}}</h4>
+            <p>{{pelicula.fecha_de_estreno}}</p>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
